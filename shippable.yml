@@ -1,0 +1,21 @@
+language: ruby
+
+# Version number
+rvm:
+  - 2.3.8
+  - 2.4.5
+  - 2.5.3
+  - 2.6.0
+  - "jruby-9.2.5.0"  
+ 
+build:
+  pre_ci_boot:
+    image_name: drydock/c7ruball
+    image_tag: master
+    pull: true
+    
+  ci:
+    - java --version
+    - source /etc/profile.d/rvm.sh
+    - rvm list
+    - ruby --version 
